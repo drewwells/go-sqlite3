@@ -29,6 +29,14 @@ FAQ
 * Want to build go-sqlite3 with libsqlite3 on my linux.
 
     Use `go build --tags "libsqlite3 linux"`
+    
+    On Mac OS X, sqlite provided with OS X is too out of date. Install a newer one with brew:
+    
+    Use `brew install sqlite`
+    
+    Now build by specifying the location of the brew installed sqlite:
+    
+    `CGO_LDFLAGS=-L/usr/local/opt/sqlite/lib go build -tags libsqlite3`
 
 * Can't build go-sqlite3 on windows 64bit.
 
